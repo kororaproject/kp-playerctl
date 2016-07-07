@@ -1,6 +1,6 @@
 Name:           playerctl
-Version:        0.5.0 
-Release:        1%{?dist}
+Version:        0.5.0
+Release:        1%{?dist}.1
 Summary:        Command-line utility and library for controlling media players
 
 License:        GPLv3
@@ -19,8 +19,8 @@ Playerctl is a command-line utility and library for controlling media players th
 
 
 %build
-./autogen.sh --prefix=%{_prefix}
 
+./autogen.sh --prefix=%{_prefix} --libdir=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -30,12 +30,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %doc README.md
 %{_bindir}/playerctl
-%{_prefix}/lib/libplayerctl*
-%{_prefix}/lib/girepository-1.0/*
-%{_prefix}/lib/pkgconfig/*
-/usr/share/gir-1.0/*
-/usr/include/playerctl/*
+%{_libdir}/libplayerctl*
+%{_libdir}/girepository-1.0/*
+%{_libdir}/pkgconfig/*
+%{_datadir}/gir-1.0/*
+%{_includedir}/playerctl/*
 
 %changelog
-* Mon Jul  4 2016 Matthew Oliver
-- 
+* Mon Jul 04 2016 Matthew Oliver - 0.5.0-1
+- Initial release
