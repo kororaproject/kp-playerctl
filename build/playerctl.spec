@@ -5,12 +5,11 @@ Summary:        Command-line utility and library for controlling media players
 
 License:        GPLv3
 URL:            https://github.com/acrisci/playerctl
-Source0:        https://github.com/acrisci/%{name}/archive/v%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  glib2-devel
-#BuildRequires:  
-#Requires:       
+BuildRequires:  gtk-doc
 
 %description
 Playerctl is a command-line utility and library for controlling media players that implement the MPRIS D-Bus Interface Specification. Playerctl makes it easy to bind player actions, such as play and pause, to media keys.
